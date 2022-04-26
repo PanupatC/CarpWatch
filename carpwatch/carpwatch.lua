@@ -64,8 +64,10 @@ ashita.register_event('render', function()
     local txt = ""
 
     txt = string.format("%8s  Inventory", inv_count)
-    if ((inv_max-used_space) < 3) then
+    if ((inv_max-used_space) < 2) then
         txt = string.format('|c0xFFFF0000|%s|r', txt)
+    elseif ((inv_max-used_space) < 5) then
+        txt = string.format('|c0xFFFF9999|%s|r', txt)
     end
     
     txt = txt .. string.format("\n%8d  Carp(s)", carp_count)
